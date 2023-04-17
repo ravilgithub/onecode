@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class LoginController extends Controller
+{
+    public function index(): string
+    {
+        return 'Форма аунтентификации пользователя.';
+    }
+
+    public function store(): string
+    {
+        return 'Аутентификация пользователя.';
+    }
+
+    public function confirm(Request $request, $user): string
+    {
+//        dump($request);
+        return "Двухфакторная аутентификация пользователя с id: $user";
+    }
+}
