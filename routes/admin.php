@@ -6,8 +6,9 @@ use Illuminate\Support\Facades\Route;
 /**
  * Posts
  */
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'active', 'admin'])->group(function () {
     Route::resource('/posts', PostController::class);
+    Route::redirect('/', 'admin/posts')->name('admin');
 
     /*Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');

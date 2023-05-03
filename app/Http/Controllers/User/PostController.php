@@ -12,7 +12,7 @@ class PostController extends Controller
      */
     public function index(Request $request): string
     {
-        return 'Страница поста';
+        return 'Страница всех постов';
         // return response()->json($request->input('title'));
     }
 

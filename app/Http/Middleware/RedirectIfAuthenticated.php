@@ -19,12 +19,18 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+        info(__CLASS__, [$request->path()]);
         foreach ($guards as $guard) {
+            // Если аутентифицирован
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                // return redirect(RouteServiceProvider::HOME);
+
+                // В кабинет пользователя
+                return redirect()->route('user');
             }
         }
 
+        // Переход по маршруту
         return $next($request);
     }
 }
