@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class RegisterController extends Controller
 {
-    public function index(): string
+    public function index(): View
     {
-        return 'Форма регистрации пользователя.';
+        return view('register.index');
     }
 
     public function store(): string

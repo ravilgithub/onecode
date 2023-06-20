@@ -22,7 +22,7 @@ use App\Http\Controllers\Posts\CommentController;
 |
 */
 
-Route::view('/', 'welcome', ['name' => 'Ravil'])->name('home');
+Route::view('/', 'home.index', ['name' => 'Ravil'])->name('home');
 Route::redirect('/home', '/', 301)->name('home.redirect');
 
 

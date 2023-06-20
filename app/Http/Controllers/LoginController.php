@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class LoginController extends Controller
 {
-    public function index(): string
+    public function index(): View
     {
-        return 'Форма аунтентификации пользователя.';
+        return view('login.index');
     }
 
     public function store(): string
@@ -18,7 +19,7 @@ class LoginController extends Controller
 
     public function confirm(Request $request, $user): string
     {
-//        dump($request);
+        //        dump($request);
         return "Двухфакторная аутентификация пользователя с id: $user";
     }
 }
