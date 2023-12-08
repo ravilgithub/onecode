@@ -4,22 +4,21 @@
 
 @section('content')
 
-    <section class="container text-start blog">
-        <a href="{{route('blog.index')}}">
-            Назад
-        </a>
+    <section class="post">
 
-        <article class="py-4 post">
+        <x-container>
 
-            <h2>
-                {{ $post->title }}
-            </h2>
+            <x-link to="blog.index" class="d-block my-4">
+                {{ __('Назад') }}
+            </x-link>
+
+            <x-title>{{ $post->title }}</x-title>
 
             <div class="content">
                 {!! $post->content !!}
             </div>
 
-        </article>
+        </x-container>
 
     </section>
 
