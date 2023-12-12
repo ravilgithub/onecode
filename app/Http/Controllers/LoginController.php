@@ -12,8 +12,9 @@ class LoginController extends Controller
         return view('login.index');
     }
 
-    public function store(): string
+    public function store(Request $request): string
     {
+        dump($request->all());
         return 'Аутентификация пользователя.';
     }
 

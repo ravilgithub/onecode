@@ -12,8 +12,9 @@ class RegisterController extends Controller
         return view('register.index');
     }
 
-    public function store(): string
+    public function store(Request $request): string
     {
+        dump($request->all());
         return 'Регистрация пользователя.';
     }
 }
