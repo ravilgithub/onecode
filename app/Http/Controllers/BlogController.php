@@ -15,7 +15,7 @@ class BlogController extends Controller
             'content' => 'Lorem, ipsum dolor sit amet <a href="https://yandex.ru">Yandex</a> consectetur adipisicing elit. Quibusdam, accusamus.'
         ];
 
-        return array_fill(0, 5, $post);
+        return array_fill(0, 4, $post);
     }
 
     /**
@@ -24,23 +24,23 @@ class BlogController extends Controller
     public function index(): View
     {
         $posts = $this->getPosts();
+        // compact('posts') == ['posts' => $posts]
         return view('blog.index', compact('posts'));
     }
-
 
     /**
      * Display the specified resource.
      */
-    public function show(string $post): View
+    public function show(string $current_post_id): View
     {
         $posts = $this->getPosts();
-        foreach ($posts as $item) {
-            if ($item->id === (int) $post) {
-                return view('blog.show', ['post' => $item]);
+        foreach ($posts as $post) {
+            if ($post->id === (int) $current_post_id) {
+                // compact('post') == ['post' => $post]
+                return view('blog.show', compact('post'));
             }
         }
     }
-
 
     /**
      * Update the specified resource in storage.
