@@ -1,8 +1,21 @@
 @props([
-    'id'   => Str::uuid(),
-    'name' => 'content',
-    'value' => '',
+    'id'          => Str::uuid(),
+    'name'        => 'content',
+    'value'       => '',
+    'placeholder' => '',
+    'label'       => __( 'Content' ),
+    'required'    => false,
+    'autofocus'   => false,
 ])
+
+<label
+    {{ $attributes->class([
+        'form-label',
+        'required' => $required,
+    ]) }}
+>
+    {{ $label }}
+</label>
 
 <input
     type="hidden"
@@ -13,6 +26,11 @@
 
 <trix-editor
     input="{{ $id }}"
+    @required($required)
+    {{ $attributes->merge([
+        'autofocus'   => $autofocus,
+        'placeholder' => $placeholder,
+    ]) }}
 ></trix-editor>
 
 @pushOnce('css')
