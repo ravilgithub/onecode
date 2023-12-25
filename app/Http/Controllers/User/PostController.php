@@ -53,9 +53,14 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): string
+    public function show(string $current_post_id): View
     {
-        return 'Страница поста c id: ' . $id;
+        $posts = $this->getPosts();
+        foreach ($posts as $post) {
+            if ($post->id === (int) $current_post_id) {
+                return view('user.posts.show', compact('post'));
+            }
+        }
     }
 
     /**
