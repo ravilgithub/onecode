@@ -36,9 +36,9 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): string
+    public function create(): View
     {
-        return 'Страница формы создания поста';
+        return view('user.posts.create');
     }
 
     /**
