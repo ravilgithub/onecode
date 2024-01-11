@@ -8,17 +8,21 @@
 
         <x-container>
 
-            <x-link to="user.posts.create" class="btn btn-outline-primary" role="button">
-                {{ __('Создать пост') }}
-            </x-link>
+            <x-on-line>
 
-            @if (empty($posts))
+                @if (empty($posts))
+                    <x-title>{{ __('Нет постов') }}</x-title>
+                @else
+                    <x-title>{{ __('Список постов!') }}</x-title>
+                @endif
 
-                <x-title>{{ __('Нет постов') }}</x-title>
+                <x-link to="user.posts.create" class="btn btn-outline-primary" role="button">
+                    {{ __('Создать пост') }}
+                </x-link>
 
-            @else
+            </x-on-line>
 
-                <x-title>{{ __('Список постов!') }}</x-title>
+            @if (!empty($posts))
 
                 <div class="row">
 

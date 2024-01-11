@@ -8,7 +8,7 @@
 
         <x-container>
 
-            <div class="d-flex justify-content-between my-4">
+            <x-on-line class="my-4">
 
                 <x-link to="user.posts.index">
                     {{ __('Назад') }}
@@ -18,7 +18,7 @@
                     {{ __('Изменить') }}
                 </x-link>
 
-            </div>
+            </x-on-line>
 
             <x-title class="pb-4 border-bottom">{{ $post->title }}</x-title>
 
