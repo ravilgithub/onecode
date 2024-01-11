@@ -66,9 +66,14 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id): string
+    public function edit(string $current_post_id): View
     {
-        return 'Страница формы изменения поста c id: ' . $id;
+        $posts = $this->getPosts();
+        foreach ($posts as $post) {
+            if ($post->id === (int) $current_post_id) {
+                return view('user.posts.edit', compact('post'));
+            }
+        }
     }
 
     /**
