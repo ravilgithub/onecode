@@ -1,12 +1,14 @@
 <x-card class="mt-5">
     <x-slot:title>
-        <h4 class="card-title">
-            {{ __('Registration') }}
-        </h4>
+        <x-on-line>
+            <h4 class="card-title">
+                {{ __('Registration') }}
+            </h4>
 
-        <x-link to="login" class="mb-1 card-link link-primary">
-            {{ __('Login') }}
-        </x-link>
+            <x-link to="login" class="mb-1 card-link link-primary">
+                {{ __('Login') }}
+            </x-link>
+        </x-on-line>
     </x-slot>
 
     <x-forms.form action="{{ route('register.store') }}" method="POST">

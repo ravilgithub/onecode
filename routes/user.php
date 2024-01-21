@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 /**
  * Posts
  */
-Route::prefix('user')->name('user.')->middleware(['auth', 'active'])->group(function () {
+// Route::prefix('user')->name('user.')->middleware(['auth', 'active'])->group(function () {
+Route::prefix('user')->name('user.')->group(function () {
     Route::resource('/posts', PostController::class);
     Route::redirect('/', 'user/posts')->name('user');
 

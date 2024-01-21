@@ -2,7 +2,7 @@
     'card',
     'p-4',
 ])}}>
-    <div class="card-caption d-flex justify-content-between align-items-center">
+    <div class="card-caption">
         {{ $title ?? __('Card title') }}
     </div>
 

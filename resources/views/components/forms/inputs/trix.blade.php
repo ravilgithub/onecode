@@ -22,7 +22,7 @@
     type="hidden"
     id="{{ $id }}"
     name="{{ $name }}"
-    value="{{ $value }}"
+    value="{!! $value !!}"
 />
 
 <trix-editor
