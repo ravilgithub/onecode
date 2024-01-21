@@ -22,7 +22,7 @@
 
                         <article class="col-sm-6 mb-4 post">
 
-                            <x-post.card :post="$post" />
+                            <x-post.card :post="$post" to="blog.show" />
 
                         </article>
 

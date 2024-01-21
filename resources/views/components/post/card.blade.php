@@ -13,8 +13,10 @@
         </small>
     </div>
 
-    {{-- :params="['blog' => $post->id]" --}}
-    <x-link to="blog.show" :params="[$post->id]">
-        {{ __('Читать...') }}
-    </x-link>
+    @if($to)
+        {{-- :params="['blog' => $post->id]" --}}
+        <x-link :to="$to" :params="[$post->id]">
+            {{ __('Читать...') }}
+        </x-link>
+    @endif
 </x-card>
