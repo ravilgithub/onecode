@@ -3,7 +3,7 @@
     'name'        => 'content',
     'value'       => '',
     'placeholder' => '',
-    'label'       => __( 'Content' ),
+    'label'       => __('Content'),
     'required'    => false,
     'autofocus'   => false,
     'prevent'     => false,
@@ -13,7 +13,7 @@
     {{ $attributes->class([
         'form-label',
         'required' => $required,
-    ]) }}
+    ])}}
 >
     {{ $label }}
 </label>
@@ -31,7 +31,7 @@
     {{ $attributes->merge([
         'autofocus'   => $autofocus,
         'placeholder' => $placeholder,
-    ]) }}
+    ])}}
 ></trix-editor>
 
 @pushOnce('css')
@@ -41,7 +41,7 @@
 @pushOnce('js')
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 
-    @if($prevent)
+    @if ($prevent)
         <script type="module">
             /**
              * Проверка на отсутствие контента.

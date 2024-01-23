@@ -10,6 +10,6 @@
     'btn-' . $size => $size,
 ])->merge([
     'type' => 'submit',
-]) }}>
+])}}>
     {{ $slot }}
 </button>
