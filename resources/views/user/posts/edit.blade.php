@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('page.title', 'Редактировать пост')
+@section('page.title', __('Редактировать пост'))
 
 @section('content')
 
