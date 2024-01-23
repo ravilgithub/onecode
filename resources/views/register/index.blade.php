@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('page.title', __('Страница регистрации'))
+@section('page.title', __('Регистрация'))
 
 @section('auth.content')
 
