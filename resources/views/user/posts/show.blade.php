@@ -15,7 +15,7 @@
                 </x-link>
 
                 <x-link to="user.posts.edit" :params="[$post->id]" class="btn btn-outline-primary" role="button">
-                    {{ __('Изменить') }}
+                    {{ __('Редактировать') }}
                 </x-link>
 
             </x-on-line>

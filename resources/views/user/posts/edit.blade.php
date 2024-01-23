@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('page.title', 'Изменить пост')
+@section('page.title', 'Редактировать пост')
 
 @section('content')
 
@@ -10,7 +10,7 @@
 
             <x-on-line>
 
-                <x-title>{{ __('Изменить пост') }}</x-title>
+                <x-title>{{ __('Редактировать пост') }}</x-title>
 
                 <x-link to="user.posts.show" :params="[$post->id]">
                     {{ __('Назад') }}
