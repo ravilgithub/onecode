@@ -12,7 +12,7 @@
                 {{ __('Назад') }}
             </x-link>
 
-            <x-title>{{ $post->title }}</x-title>
+            <x-title class="h2 my-4">{{ $post->title }}</x-title>
 
             <div class="content">
                 {!! $post->content !!}

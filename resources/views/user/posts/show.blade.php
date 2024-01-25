@@ -20,7 +20,7 @@
 
             </x-on-line>
 
-            <x-title class="pb-4 border-bottom">{{ $post->title }}</x-title>
+            <x-title class="h2 my-4 pb-4 border-bottom">{{ $post->title }}</x-title>
 
             <div class="content">
                 {!! $post->content !!}

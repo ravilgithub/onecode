@@ -10,11 +10,11 @@
 
             @if (empty($posts))
 
-                <x-title>{{ __('Нет постов') }}</x-title>
+                <x-title class="h2 my-4">{{ __('Нет постов') }}</x-title>
 
             @else
 
-                <x-title>{{ __('Список постов!') }}</x-title>
+                <x-title class="h2 my-4">{{ __('Список постов!') }}</x-title>
 
                 <div class="row">
 

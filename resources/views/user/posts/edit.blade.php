@@ -10,7 +10,7 @@
 
             <x-on-line>
 
-                <x-title>{{ __('Редактировать пост') }}</x-title>
+                <x-title class="h2 my-4">{{ __('Редактировать пост') }}</x-title>
 
                 <x-link to="user.posts.show" :params="[$post->id]">
                     {{ __('Назад') }}

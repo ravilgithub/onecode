@@ -2,9 +2,6 @@
     'level' => 1
 ])
 
-<h{{ $level }} {{ $attributes->class([
-    'h2',
-    'my-4',
-])}}>
+<h{{ $level }} {{ $attributes }}>
     {{ $slot }}
 </h{{ $level }}>
