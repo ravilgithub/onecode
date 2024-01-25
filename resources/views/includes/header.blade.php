@@ -34,7 +34,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <x-link to="register" class="nav-link" area="true">
+                        <x-link to="register" class="nav-link pe-0" area="true">
                             {{ __('Регистрация') }}
                         </x-link>
                     </li>
