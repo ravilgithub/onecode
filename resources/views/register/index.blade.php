@@ -1,11 +1,9 @@
-@extends('layouts.base')
+@extends('layouts.auth')
 
-@section('page.title', 'Страница регистрации')
+@section('page.title', __('Регистрация'))
 
-@section('content')
+@section('auth.content')
 
-    <h1>
-        Страница регистрации
-    </h1>
+    <x-register.card />
 
 @endsection

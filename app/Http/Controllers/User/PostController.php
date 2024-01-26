@@ -4,24 +4,41 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class PostController extends Controller
 {
     /**
+     * Записи пользователя
+     *
+     * @return  array
+     */
+    public function getPosts(): array
+    {
+        $post = (object) [
+            'id'      => 1,
+            'title'   => 'Lorem ipsum dolor sit amet.',
+            'content' => 'Lorem, ipsum dolor sit amet <a href="https://yandex.ru">Yandex</a> consectetur adipisicing elit. Quibusdam, accusamus.'
+        ];
+
+        return array_fill(0, 4, $post);
+    }
+
+    /**
      * Display a listing of the resource.
      */
-    public function index(Request $request): string
+    public function index(Request $request): View
     {
-        return 'Страница всех постов';
-        // return response()->json($request->input('title'));
+        $posts = $this->getPosts();
+        return view('user.posts.index', compact('posts'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): string
+    public function create(): View
     {
-        return 'Страница формы создания поста';
+        return view('user.posts.create');
     }
 
     /**
@@ -36,17 +53,27 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id): string
+    public function show(string $current_post_id): View
     {
-        return 'Страница поста c id: ' . $id;
+        $posts = $this->getPosts();
+        foreach ($posts as $post) {
+            if ($post->id === (int) $current_post_id) {
+                return view('user.posts.show', compact('post'));
+            }
+        }
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id): string
+    public function edit(string $current_post_id): View
     {
-        return 'Страница формы изменения поста c id: ' . $id;
+        $posts = $this->getPosts();
+        foreach ($posts as $post) {
+            if ($post->id === (int) $current_post_id) {
+                return view('user.posts.edit', compact('post'));
+            }
+        }
     }
 
     /**

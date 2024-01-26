@@ -1,40 +1,38 @@
 @extends('layouts.base')
 
-@section('page.title', 'Страница блога')
+@section('page.title', __('Блог'))
 
 @section('content')
 
-    <section class="container text-start blog">
+    <section class="blog">
 
-        @if (empty($posts))
+        <x-container>
 
-            <article class="py-4 post empty">
-                Нет постов
-            </article>
+            @if (empty($posts))
 
-        @else
+                <x-title class="h2 my-4">{{ __('Нет постов') }}</x-title>
 
-            @foreach ($posts as $post)
+            @else
 
-                <article class="py-4 post">
+                <x-title class="h2 my-4">{{ __('Список постов!') }}</x-title>
 
-                    <h2>
-                        {{ $post->title }}
-                    </h2>
+                <div class="row">
 
-                    <div class="content">
-                        {!! $post->content !!}
-                    </div>
+                    @foreach ($posts as $post)
 
-                    <a href="{{ route('blog.show', $post->id) }}">
-                        Читать...
-                    </a>
+                        <article class="col-sm-6 mb-4 post">
 
-                </article>
+                            <x-post.card :post="$post" to="blog.show" />
 
-            @endforeach
+                        </article>
 
-        @endif
+                    @endforeach
+
+                </div>
+
+            @endif
+
+        </x-container>
 
     </section>
 
