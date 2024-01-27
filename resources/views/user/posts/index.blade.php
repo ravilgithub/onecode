@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('page.title', 'Мои посты')
+@section('page.title', __('Мои посты'))
 
 @section('content')
 
@@ -11,9 +11,9 @@
             <x-on-line>
 
                 @if (empty($posts))
-                    <x-title>{{ __('Нет постов') }}</x-title>
+                    <x-title class="h2 my-4">{{ __('Нет постов') }}</x-title>
                 @else
-                    <x-title>{{ __('Список постов!') }}</x-title>
+                    <x-title class="h2 my-4">{{ __('Список постов!') }}</x-title>
                 @endif
 
                 <x-link to="user.posts.create" class="btn btn-outline-primary" role="button">

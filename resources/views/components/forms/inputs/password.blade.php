@@ -9,7 +9,7 @@
     {{ $attributes->class([
         'form-label',
         'required' => $required,
-    ]) }}
+    ])}}
 >
     {{ $label }}
 </label>
@@ -22,5 +22,5 @@
     ])->merge([
         'name'      => $name,
         'autofocus' => $autofocus,
-    ]) }}
+    ])}}
 />

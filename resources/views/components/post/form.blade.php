@@ -4,7 +4,7 @@
 ])
 
 <x-forms.form {{ $attributes }} method="POST">
-    @if($put)
+    @if ($put)
         @method('PUT')
     @endif
 

@@ -13,7 +13,7 @@
 
 
     <div class="row">
-        <div class="{{$class}}">
+        <div class="{{ $class }}">
 
             {{ $slot }}
 

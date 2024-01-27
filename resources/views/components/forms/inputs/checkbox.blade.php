@@ -12,7 +12,7 @@
         'form-check-label',
     ])->merge([
         'for' => $id,
-    ]) }}
+    ])}}
 >
     {{ $label }}
 </label>
@@ -27,5 +27,5 @@
         'value'     => $value,
         'id'        => $id,
         'autofocus' => $autofocus,
-    ]) }}
+    ])}}
 />

@@ -15,12 +15,12 @@
                 </x-link>
 
                 <x-link to="user.posts.edit" :params="[$post->id]" class="btn btn-outline-primary" role="button">
-                    {{ __('Изменить') }}
+                    {{ __('Редактировать') }}
                 </x-link>
 
             </x-on-line>
 
-            <x-title class="pb-4 border-bottom">{{ $post->title }}</x-title>
+            <x-title class="h2 my-4 pb-4 border-bottom">{{ $post->title }}</x-title>
 
             <div class="content">
                 {!! $post->content !!}

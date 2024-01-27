@@ -56,7 +56,7 @@ class Link extends Component
      *
      * @return String
      */
-    public function getRouteURL()
+    public function getRouteURL(): string
     {
         if (!empty($this->params))
             return route($this->to, $this->params);

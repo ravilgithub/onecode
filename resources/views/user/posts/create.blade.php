@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('page.title', 'Создать пост')
+@section('page.title', __('Создать пост'))
 
 @section('content')
 
@@ -10,7 +10,7 @@
 
             <x-on-line>
 
-                <x-title>{{ __('Создать пост') }}</x-title>
+                <x-title class="h2 my-4">{{ __('Создать пост') }}</x-title>
 
                 <x-link to="user.posts.index">
                     {{ __('Назад') }}

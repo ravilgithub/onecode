@@ -2,7 +2,7 @@
 
     <x-container>
 
-        &copy; {{config('app.name')}} {{$date}}
+        &copy; {{ config('app.name') }} {{ $date }}
 
     </x-container>
 

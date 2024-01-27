@@ -13,7 +13,7 @@
         </small>
     </div>
 
-    @if($to)
+    @if ($to)
         {{-- :params="['blog' => $post->id]" --}}
         <x-link :to="$to" :params="[$post->id]">
             {{ __('Читать...') }}

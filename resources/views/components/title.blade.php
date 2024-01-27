@@ -1,6 +1,7 @@
-<h1 {{ $attributes->class([
-    'h2',
-    'my-4',
-])}}>
+@props([
+    'level' => 1
+])
+
+<h{{ $level }} {{ $attributes }}>
     {{ $slot }}
-</h1>
+</h{{ $level }}>
