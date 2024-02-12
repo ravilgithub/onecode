@@ -86,6 +86,11 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id): string
     {
+        $title = $request->input('title');
+        $content = $request->input('content');
+
+        dump($title, $content);
+
         return 'Изменение поста c id: ' . $id;
     }
 
