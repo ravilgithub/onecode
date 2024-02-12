@@ -46,6 +46,11 @@ class PostController extends Controller
      */
     public function store(Request $request): string
     {
+        $title = $request->input('title');
+        $content = $request->input('content');
+
+        dump($title, $content);
+
         return 'Создание поста';
         // return response()->json($request->all());
     }
