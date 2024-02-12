@@ -14,7 +14,13 @@ class RegisterController extends Controller
 
     public function store(Request $request): string
     {
-        dump($request->all());
+        $email = $request->input('email');
+        $password = $request->input('password');
+        $password_confirmation = $request->input('password_confirmation');
+        $rules = $request->boolean('rules');
+
+        dump($email, $password, $password_confirmation, $rules);
+
         return 'Регистрация пользователя.';
     }
 }
