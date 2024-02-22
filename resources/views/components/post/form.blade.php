@@ -17,6 +17,6 @@
     </x-forms.form-item>
 
     <x-button>
-        {{ __('Submit') }}
+        {{ $put ? __('Изменить пост') : __('Создать пост') }}
     </x-button>
 </x-forms.form>
