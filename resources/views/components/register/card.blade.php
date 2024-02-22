@@ -29,7 +29,7 @@
         </x-forms.form-item>
 
         <x-button>
-            {{ __('Submit') }}
+            {{ __('Зарегистрироваться') }}
         </x-button>
     </x-forms.form>
 </x-card>
