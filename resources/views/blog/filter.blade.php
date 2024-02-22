@@ -1,5 +1,5 @@
 <x-forms.form
-    class="mb-4"
+    class="mb-3"
     action="{{ route('blog.index') }}"
     method="GET"
 >
