@@ -8,11 +8,11 @@
         @method('PUT')
     @endif
 
-    <x-forms.form-item>
+    <x-forms.form-item class="mb-3">
         <x-forms.inputs.text label="{{ __('Title') }}" value="{{ $post->title ?? '' }}" autofocus required />
     </x-forms.form-item>
 
-    <x-forms.form-item>
+    <x-forms.form-item class="mb-3">
         <x-forms.inputs.trix label="{{ __('Content') }}" value="{{ $post->content ?? '' }}" required />
     </x-forms.form-item>
 
