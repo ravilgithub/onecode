@@ -25,7 +25,7 @@
         </x-forms.form-item>
 
         <x-button>
-            {{ __('Submit') }}
+            {{ __('Войти') }}
         </x-button>
     </x-forms.form>
 </x-card>
