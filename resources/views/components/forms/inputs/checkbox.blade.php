@@ -8,11 +8,8 @@
 ])
 
 <label
-    {{ $attributes->class([
-        'form-check-label',
-    ])->merge([
-        'for' => $id,
-    ])}}
+    class="form-check-label"
+    for={{ $id }}
 >
     {{ $label }}
 </label>

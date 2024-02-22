@@ -7,10 +7,10 @@
 ])
 
 <label
-    {{ $attributes->class([
+    @class([
         'form-label',
         'required' => $required,
-    ])}}
+    ])
 >
     {{ $label }}
 </label>

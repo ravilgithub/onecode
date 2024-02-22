@@ -10,10 +10,10 @@
 ])
 
 <label
-    {{ $attributes->class([
+    @class([
         'form-label',
         'required' => $required,
-    ])}}
+    ])
 >
     {{ $label }}
 </label>
@@ -28,7 +28,9 @@
 <trix-editor
     input="{{ $id }}"
     @required($required)
-    {{ $attributes->merge([
+    {{ $attributes->class([
+        'form-control',
+    ])->merge([
         'autofocus'   => $autofocus,
         'placeholder' => $placeholder,
     ])}}
