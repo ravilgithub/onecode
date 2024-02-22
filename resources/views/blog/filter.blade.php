@@ -10,6 +10,7 @@
                 value="{{ request('search') }}"
                 placeholder="{{ __('Поиск') }}"
                 autofocus
+                single
                 required
             />
         </x-forms.form-item>

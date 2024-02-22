@@ -3,16 +3,19 @@
     'name'      => 'password',
     'required'  => false,
     'autofocus' => false,
+    'single'    => false,
 ])
 
-<label
-    @class([
-        'form-label',
-        'required' => $required,
-    ])
->
-    {{ $label }}
-</label>
+@if (! $single)
+    <label
+        @class([
+            'form-label',
+            'required' => $required,
+        ])
+    >
+        {{ $label }}
+    </label>
+@endif
 
 <input
     type="password"
