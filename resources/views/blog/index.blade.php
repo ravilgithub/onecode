@@ -16,6 +16,8 @@
 
                 <x-title class="h2 my-4">{{ __('Список постов!') }}</x-title>
 
+                @include('blog.filter')
+
                 <div class="row">
 
                     @foreach ($posts as $post)

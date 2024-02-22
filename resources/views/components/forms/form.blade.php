@@ -1,8 +1,16 @@
+@props([
+    'action' => '',
+    'method' => 'GET',
+])
+
 <form
     action="{{ $action }}"
-    method="{{ $method }}"
+    method="{{ strtoupper($method) }}"
     autocomplete
 >
-    @csrf
+    @if ($method !== 'GET')
+        @csrf
+    @endif
+
     {{ $slot }}
 </form>
