@@ -1,7 +1,3 @@
-<div
-    {{ $attributes->class([
-        'mb-3',
-    ])}}
->
+<div {{ $attributes }}>
     {{ $slot }}
 </div>
