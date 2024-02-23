@@ -1,12 +1,7 @@
-@props([
-    'method' => 'GET',
-])
-
 <form
-    {{ $attributes->merge([
-        'action' => '',
-        'method' => $method,
-    ])}}
+    {{ $attributes }}
+    action="{{ $action }}"
+    method="{{ $method }}"
     autocomplete
 >
     @if ($method !== 'GET')
