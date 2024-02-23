@@ -1,7 +1,4 @@
-<x-forms.form
-    action="{{ route('blog.index') }}"
-    method="GET"
->
+<x-forms.form action="{{ route('blog.index') }}">
     <div class="row">
         <x-forms.form-item class="col-md-4 mb-4">
             <x-forms.inputs.text
