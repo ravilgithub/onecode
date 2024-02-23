@@ -1,8 +1,12 @@
 <form
+    {{ $attributes }}
     action="{{ $action }}"
     method="{{ $method }}"
     autocomplete
 >
-    @csrf
+    @if ($method !== 'GET')
+        @csrf
+    @endif
+
     {{ $slot }}
 </form>

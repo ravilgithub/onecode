@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Forms;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -18,8 +18,8 @@ class Form extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $action,
-        public string $method
+        public string $action = '',
+        public string $method = 'GET'
     ) {
         //
     }

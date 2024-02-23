@@ -7,16 +7,19 @@
     'required'    => false,
     'autofocus'   => false,
     'prevent'     => false,
+    'single'      => false,
 ])
 
-<label
-    {{ $attributes->class([
-        'form-label',
-        'required' => $required,
-    ])}}
->
-    {{ $label }}
-</label>
+@if (! $single)
+    <label
+        @class([
+            'form-label',
+            'required' => $required,
+        ])
+    >
+        {{ $label }}
+    </label>
+@endif
 
 <input
     type="hidden"
@@ -28,7 +31,9 @@
 <trix-editor
     input="{{ $id }}"
     @required($required)
-    {{ $attributes->merge([
+    {{ $attributes->class([
+        'form-control',
+    ])->merge([
         'autofocus'   => $autofocus,
         'placeholder' => $placeholder,
     ])}}

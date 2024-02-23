@@ -5,17 +5,17 @@
     'value'     => 'yes',
     'checked'   => false,
     'autofocus' => false,
+    'single' => false,
 ])
 
-<label
-    {{ $attributes->class([
-        'form-check-label',
-    ])->merge([
-        'for' => $id,
-    ])}}
->
-    {{ $label }}
-</label>
+@if (! $single)
+    <label
+        class="form-check-label"
+        for={{ $id }}
+    >
+        {{ $label }}
+    </label>
+@endif
 
 <input
     type="checkbox"
