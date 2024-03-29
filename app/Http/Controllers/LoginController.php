@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class LoginController extends Controller
@@ -12,15 +13,9 @@ class LoginController extends Controller
         return view('login.index');
     }
 
-    public function store(Request $request): string
+    public function store(Request $request): RedirectResponse
     {
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $remember = $request->boolean('remember');
-
-        dump($email, $password, $remember);
-
-        return 'Аутентификация пользователя.';
+        return redirect()->route('user.posts.index');
     }
 
     public function confirm(Request $request, $user): string
