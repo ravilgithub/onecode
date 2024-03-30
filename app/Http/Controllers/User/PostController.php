@@ -80,14 +80,9 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): string
+    public function update(Request $request, string $id): RedirectResponse
     {
-        $title = $request->input('title');
-        $content = $request->input('content');
-
-        dump($title, $content);
-
-        return 'Изменение поста c id: ' . $id;
+        return back();
     }
 
     /**
