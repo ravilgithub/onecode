@@ -88,9 +88,9 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): string
+    public function destroy(string $id): RedirectResponse
     {
-        return 'Удаление поста c id: ' . $id;
+        return redirect()->route('user.posts.index');
     }
 
     /**
