@@ -24,6 +24,7 @@
         'form-control',
     ])->merge([
         'name'      => $name,
+        'value'     => old($name),
         'autofocus' => $autofocus,
     ])}}
 />

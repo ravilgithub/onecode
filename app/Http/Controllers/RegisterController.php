@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class RegisterController extends Controller
@@ -12,15 +13,12 @@ class RegisterController extends Controller
         return view('register.index');
     }
 
-    public function store(Request $request): string
+    public function store(Request $request): RedirectResponse
     {
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $password_confirmation = $request->input('password_confirmation');
-        $rules = $request->boolean('rules');
+        if ($invalid = true) {
+            return back()->withInput();
+        }
 
-        dump($email, $password, $password_confirmation, $rules);
-
-        return 'Регистрация пользователя.';
+        return redirect()->route('user.posts.index');
     }
 }

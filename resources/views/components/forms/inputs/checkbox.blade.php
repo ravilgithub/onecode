@@ -2,8 +2,6 @@
     'label'     => __('Remember me'),
     'id'        => Str::uuid(),
     'name'      => 'checkbox',
-    'value'     => 'yes',
-    'checked'   => false,
     'autofocus' => false,
     'single' => false,
 ])
@@ -19,12 +17,12 @@
 
 <input
     type="checkbox"
-    @checked($checked)
+    @checked(old($name))
     {{ $attributes->class([
         'form-check-input',
     ])->merge([
         'name'      => $name,
-        'value'     => $value,
+        'value'     => old($name),
         'id'        => $id,
         'autofocus' => $autofocus,
     ])}}

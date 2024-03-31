@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class PostController extends Controller
@@ -44,15 +45,10 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): string
+    public function store(Request $request): RedirectResponse
     {
-        $title = $request->input('title');
-        $content = $request->input('content');
-
-        dump($title, $content);
-
-        return 'Создание поста';
-        // return response()->json($request->all());
+        $post = $this->getPosts()[0];
+        return redirect()->route('user.posts.show', $post->id);
     }
 
     /**
@@ -84,22 +80,17 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): string
+    public function update(Request $request, string $id): RedirectResponse
     {
-        $title = $request->input('title');
-        $content = $request->input('content');
-
-        dump($title, $content);
-
-        return 'Изменение поста c id: ' . $id;
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id): string
+    public function destroy(string $id): RedirectResponse
     {
-        return 'Удаление поста c id: ' . $id;
+        return redirect()->route('user.posts.index');
     }
 
     /**
