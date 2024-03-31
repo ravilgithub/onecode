@@ -15,6 +15,10 @@ class LoginController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
+        if ($invalid = true) {
+            return back()->withInput();
+        }
+
         return redirect()->route('user.posts.index');
     }
 
