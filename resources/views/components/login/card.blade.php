@@ -21,7 +21,7 @@
         </x-forms.form-item>
 
         <x-forms.form-item class="mb-3 form-check">
-            <x-forms.inputs.checkbox label="{{ __('Remember me') }}" name="remember" checked />
+            <x-forms.inputs.checkbox label="{{ __('Remember me') }}" name="remember"/>
         </x-forms.form-item>
 
         <x-button>
