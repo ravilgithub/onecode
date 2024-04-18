@@ -16,9 +16,11 @@ class RegisterController extends Controller
     public function store(Request $request): RedirectResponse
     {
         if ($invalid = true) {
+            alert('Something wrong!', 'danger');
             return back()->withInput();
         }
 
+        alert('Welcome aboard.');
         return redirect()->route('user.posts.index');
     }
 }
