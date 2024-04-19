@@ -83,6 +83,7 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
+        alert('Обновлено!');
         return back();
     }
 
