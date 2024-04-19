@@ -13,3 +13,11 @@ if (!function_exists('test')) {
         return app('test');
     }
 }
+
+if (! function_exists('alert')) {
+    function alert(String $msg, String $variant = 'success') : void
+    {
+        session()->flash('alert', $msg);
+        session()->flash('alert-variant', $variant);
+    }
+}

@@ -48,6 +48,7 @@ class PostController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $post = $this->getPosts()[0];
+        alert('Сохранено!');
         return redirect()->route('user.posts.show', $post->id);
     }
 
@@ -82,6 +83,7 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id): RedirectResponse
     {
+        alert('Обновлено!');
         return back();
     }
 
