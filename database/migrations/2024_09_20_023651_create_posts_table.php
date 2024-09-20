@@ -12,8 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->id()->from(1001);
             $table->timestamps();
+
+            $table->foreignId('user_id')->nullable()->constrained();
+
+            $table->string('title', 1000);
+            $table->text('content');
+
+            $table->boolean('published')->default(true);
+            $table->timestamp('published_at')->nullable();
         });
     }
 
