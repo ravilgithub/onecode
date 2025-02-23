@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\StoreUpdatePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -45,8 +46,12 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StoreUpdatePostRequest $request): RedirectResponse
     {
+        $validated = $request->validated();
+
+        // dd($validated);
+
         $post = $this->getPosts()[0];
         alert('Сохранено!');
         return redirect()->route('user.posts.show', $post->id);
@@ -81,8 +86,12 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): RedirectResponse
+    public function update(StoreUpdatePostRequest $request, string $id): RedirectResponse
     {
+        $validated = $request->validated();
+
+        // dd($validated);
+
         alert('Обновлено!');
         return back();
     }
