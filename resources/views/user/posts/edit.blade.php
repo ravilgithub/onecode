@@ -18,7 +18,7 @@
 
             </x-on-line>
 
-            <x-post.form class="my-form" action="{{ route('user.posts.update', $post->id) }}" :post="$post" put />
+            <x-post.form class="my-form" action="{{ route('user.posts.update', $post->id) }}" :post="$post" :categories="$categories" put />
 
         </x-container>
 

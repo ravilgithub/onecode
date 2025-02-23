@@ -1,6 +1,7 @@
 @props([
     'post' => null,
     'put'  => false,
+    'categories' => [],
 ])
 
 <x-forms.form {{ $attributes }} method="POST">
@@ -14,6 +15,16 @@
 
     <x-forms.form-item class="mb-3">
         <x-forms.inputs.trix label="{{ __('Content') }}" value="{{ $post->content ?? '' }}" required />
+    </x-forms.form-item>
+
+    <x-forms.form-item class="col-md-4 mb-4">
+        <x-forms.inputs.select
+            label="Category"
+            name="category_id"
+            value="{{ request('category_id') }}"
+            :options="$categories"
+            required
+        />
     </x-forms.form-item>
 
     <x-button>
