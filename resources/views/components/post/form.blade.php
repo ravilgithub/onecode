@@ -4,6 +4,8 @@
     'categories' => [],
 ])
 
+<x-forms.error />
+
 <x-forms.form {{ $attributes }} method="POST">
     @if ($put)
         @method('PUT')
