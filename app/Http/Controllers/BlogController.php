@@ -7,18 +7,6 @@ use Illuminate\View\View;
 
 class BlogController extends Controller
 {
-    public function getPosts(): array
-    {
-        $post = (object) [
-            'id'      => 1,
-            'title'   => 'Lorem ipsum dolor sit amet.',
-            'content' => 'Lorem, ipsum dolor sit amet <a href="https://yandex.ru">Yandex</a> consectetur adipisicing elit. Quibusdam, accusamus.',
-            'category_id' => 1,
-        ];
-
-        return array_fill(0, 4, $post);
-    }
-
     /**
      * Фильтрация записей блога
      *
@@ -30,7 +18,7 @@ class BlogController extends Controller
     public function filterPosts(Request $request, array $posts): array
     {
         $search = strtolower($request->input('search'));
-        $search_cat_id = (int) $request->input('category_id');
+        $search_cat_id = (int) $request->input('category');
 
         return array_filter(
             $posts,
@@ -38,7 +26,7 @@ class BlogController extends Controller
             {
                 $title = strtolower($post->title);
                 $content = strtolower($post->content);
-                $post_cat_id = $post->category_id;
+                $post_cat_id = $post->category;
 
                 if (
                     $search_cat_id &&
@@ -64,16 +52,9 @@ class BlogController extends Controller
      */
     public function index(Request $request): View
     {
-        $categories = [
-            __('Все категории'),
-            __('Первая категория'),
-            __('Вторая категория'),
-            __('Третья категория'),
-        ];
-        $posts = $this->getPosts();
+        $categories = getCategories();
+        $posts = getPosts();
         $posts = $this->filterPosts($request, $posts);
-
-        // compact('posts') == ['posts' => $posts]
         return view('blog.index', compact('posts', 'categories'));
     }
 
@@ -82,10 +63,9 @@ class BlogController extends Controller
      */
     public function show(string $current_post_id): View
     {
-        $posts = $this->getPosts();
+        $posts = getPosts();
         foreach ($posts as $post) {
             if ($post->id === (int) $current_post_id) {
-                // compact('post') == ['post' => $post]
                 return view('blog.show', compact('post'));
             }
         }

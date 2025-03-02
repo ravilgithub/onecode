@@ -188,7 +188,7 @@ return [
     'attributes' => [
         'title' => 'заголовок',
         'content' => 'содержание',
-        'category_id' => 'категория',
+        'category' => 'категория',
     ],
 
 ];

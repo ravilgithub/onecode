@@ -3,7 +3,7 @@
     нужно передать параметр "checked" при вызове компонента.
 --}}
 @props([
-    'label'     => __('Remember me'),
+    'label'     => 'Checkbox',
     'id'        => Str::uuid(),
     'name'      => 'checkbox',
     'autofocus' => false,
@@ -15,7 +15,7 @@
         class="form-check-label"
         for={{ $id }}
     >
-        {{ $label }}
+        {{ __($label) }}
     </label>
 @endif
 

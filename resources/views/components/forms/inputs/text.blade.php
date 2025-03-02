@@ -1,6 +1,6 @@
 @props([
-    'label'     => __('Title'),
-    'name'      => 'title',
+    'label'     => 'Text',
+    'name'      => 'text',
     'value'     => '',
     'required'  => false,
     'autofocus' => false,
@@ -14,7 +14,7 @@
             'required' => $required,
         ])
     >
-        {{ $label }}
+        {{ __($label) }}
     </label>
 @endif
 
