@@ -1,6 +1,6 @@
 @props([
     'id'          => Str::uuid(),
-    'name'        => 'content',
+    'name'        => 'editor',
     'value'       => '',
     'placeholder' => '',
     'label'       => 'Editor',

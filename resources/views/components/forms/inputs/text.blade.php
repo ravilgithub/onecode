@@ -1,6 +1,6 @@
 @props([
     'label'     => 'Text',
-    'name'      => 'title',
+    'name'      => 'text',
     'value'     => '',
     'required'  => false,
     'autofocus' => false,

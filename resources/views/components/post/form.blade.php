@@ -12,13 +12,13 @@
     @endif
 
     <x-forms.form-item class="mb-3">
-        <x-forms.inputs.text label="Title" value="{{ $post->title ?? '' }}" autofocus required />
+        <x-forms.inputs.text label="Title" name="title" value="{{ $post->title ?? '' }}" autofocus required />
 
         <x-forms.error name="title" />
     </x-forms.form-item>
 
     <x-forms.form-item class="mb-3">
-        <x-forms.inputs.editor label="Content" value="{{ $post->content ?? '' }}" required />
+        <x-forms.inputs.editor label="Content" name="content" value="{{ $post->content ?? '' }}" required />
 
         <x-forms.error name="content" />
     </x-forms.form-item>
