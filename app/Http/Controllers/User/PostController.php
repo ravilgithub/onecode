@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\StoreUpdatePostRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -39,14 +40,25 @@ class PostController extends Controller
      */
     public function create(): View
     {
-        return view('user.posts.create');
+        $categories = [
+            __('Без категории'),
+            __('Первая категория'),
+            __('Вторая категория'),
+            __('Третья категория'),
+        ];
+
+        return view('user.posts.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StoreUpdatePostRequest $request): RedirectResponse
     {
+        $validated = $request->validated();
+
+        // dd($validated);
+
         $post = $this->getPosts()[0];
         alert('Сохранено!');
         return redirect()->route('user.posts.show', $post->id);
@@ -70,10 +82,17 @@ class PostController extends Controller
      */
     public function edit(string $current_post_id): View
     {
+        $categories = [
+            __('Без категории'),
+            __('Первая категория'),
+            __('Вторая категория'),
+            __('Третья категория'),
+        ];
+
         $posts = $this->getPosts();
         foreach ($posts as $post) {
             if ($post->id === (int) $current_post_id) {
-                return view('user.posts.edit', compact('post'));
+                return view('user.posts.edit', compact('post', 'categories'));
             }
         }
     }
@@ -81,8 +100,12 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id): RedirectResponse
+    public function update(StoreUpdatePostRequest $request, string $id): RedirectResponse
     {
+        $validated = $request->validated();
+
+        // dd($validated);
+
         alert('Обновлено!');
         return back();
     }

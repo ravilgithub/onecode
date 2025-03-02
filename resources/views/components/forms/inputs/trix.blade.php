@@ -25,7 +25,7 @@
     type="hidden"
     id="{{ $id }}"
     name="{{ $name }}"
-    value="{!! $value !!}"
+    value="{!! old($name) ?: $value !!}"
 />
 
 <trix-editor

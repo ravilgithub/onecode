@@ -1,5 +1,6 @@
 @props([
     'label'     => __('Select'),
+    'name'      => 'select',
     'value'     => '',
     'required'  => false,
     'single'    => false,
@@ -21,7 +22,7 @@
     {{ $attributes->class([
         'form-select',
     ])->merge([
-        'name'      => 'select',
+        'name'      => $name,
         'required'  => $required,
         'autofocus' => false,
     ])}}
@@ -29,7 +30,7 @@
     @foreach ($options as $key => $text)
         <option
             value="{{ $key }}"
-            @selected($key == $value)
+            @selected($key == (old($name) ?: $value))
         >
             {{ $text }}
         </option>
