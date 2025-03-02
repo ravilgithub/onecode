@@ -13,8 +13,8 @@
 
         <x-forms.form-item class="col-md-4 mb-4">
             <x-forms.inputs.select
-                name="category_id"
-                value="{{ request('category_id') }}"
+                name="category"
+                value="{{ request('category') }}"
                 :options="$categories"
                 single
                 required

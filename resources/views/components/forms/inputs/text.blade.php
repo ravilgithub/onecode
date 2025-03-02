@@ -1,6 +1,6 @@
 @props([
-    'label'     => __('Title'),
-    'name'      => 'title',
+    'label'     => 'Text',
+    'name'      => 'text',
     'value'     => '',
     'required'  => false,
     'autofocus' => false,
@@ -14,7 +14,7 @@
             'required' => $required,
         ])
     >
-        {{ $label }}
+        {{ __($label) }}
     </label>
 @endif
 
@@ -25,7 +25,7 @@
         'form-control',
     ])->merge([
         'name'      => $name,
-        'value'     => $value,
+        'value'     => old($name) ?: $value,
         'autofocus' => $autofocus,
     ])}}
 />

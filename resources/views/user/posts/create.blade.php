@@ -18,7 +18,7 @@
 
             </x-on-line>
 
-            <x-post.form class="my-form" action="{{ route('user.posts.store') }}" />
+            <x-post.form class="my-form" action="{{ route('user.posts.store') }}" :categories="$categories" />
 
         </x-container>
 
