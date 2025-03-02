@@ -7,18 +7,6 @@ use Illuminate\View\View;
 
 class BlogController extends Controller
 {
-    public function getPosts(): array
-    {
-        $post = (object) [
-            'id'      => 1,
-            'title'   => 'Lorem ipsum dolor sit amet.',
-            'content' => 'Lorem, ipsum dolor sit amet <a href="https://yandex.ru">Yandex</a> consectetur adipisicing elit. Quibusdam, accusamus.',
-            'category' => 1,
-        ];
-
-        return array_fill(0, 4, $post);
-    }
-
     /**
      * Фильтрация записей блога
      *
@@ -65,7 +53,7 @@ class BlogController extends Controller
     public function index(Request $request): View
     {
         $categories = getCategories();
-        $posts = $this->getPosts();
+        $posts = getPosts();
         $posts = $this->filterPosts($request, $posts);
 
         // compact('posts') == ['posts' => $posts]
@@ -77,7 +65,7 @@ class BlogController extends Controller
      */
     public function show(string $current_post_id): View
     {
-        $posts = $this->getPosts();
+        $posts = getPosts();
         foreach ($posts as $post) {
             if ($post->id === (int) $current_post_id) {
                 // compact('post') == ['post' => $post]

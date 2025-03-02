@@ -24,16 +24,32 @@ if (! function_exists('alert')) {
 
 /**
  * Имитация модели "Категории публикаций".
- *
- * @return Array - категории публикаций
  */
 if (! function_exists('getCategories')) {
-    function getCategories() {
+    function getCategories(): array
+    {
         return [
             __('Все категории'),
             __('Первая категория'),
             __('Вторая категория'),
             __('Третья категория'),
         ];
+    }
+}
+
+/**
+ * Имитация модели "Публикации".
+ */
+if (! function_exists('getPosts')) {
+    function getPosts(): array
+    {
+        $post = (object) [
+            'id'      => 1,
+            'title'   => 'Lorem ipsum dolor sit amet.',
+            'content' => 'Lorem, ipsum dolor sit amet <a href="https://yandex.ru">Yandex</a> consectetur adipisicing elit. Quibusdam, accusamus.',
+            'category' => 1,
+        ];
+
+        return array_fill(0, 4, $post);
     }
 }

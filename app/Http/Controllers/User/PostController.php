@@ -11,27 +11,11 @@ use Illuminate\View\View;
 class PostController extends Controller
 {
     /**
-     * Записи пользователя
-     *
-     * @return  array
-     */
-    public function getPosts(): array
-    {
-        $post = (object) [
-            'id'      => 1,
-            'title'   => 'Lorem ipsum dolor sit amet.',
-            'content' => 'Lorem, ipsum dolor sit amet <a href="https://yandex.ru">Yandex</a> consectetur adipisicing elit. Quibusdam, accusamus.'
-        ];
-
-        return array_fill(0, 4, $post);
-    }
-
-    /**
      * Display a listing of the resource.
      */
     public function index(Request $request): View
     {
-        $posts = $this->getPosts();
+        $posts = getPosts();
         return view('user.posts.index', compact('posts'));
     }
 
@@ -53,7 +37,7 @@ class PostController extends Controller
 
         // dd($validated);
 
-        $post = $this->getPosts()[0];
+        $post = getPosts()[0];
         alert('Сохранено!');
         return redirect()->route('user.posts.show', $post->id);
     }
@@ -63,7 +47,7 @@ class PostController extends Controller
      */
     public function show(string $current_post_id): View
     {
-        $posts = $this->getPosts();
+        $posts = getPosts();
         foreach ($posts as $post) {
             if ($post->id === (int) $current_post_id) {
                 return view('user.posts.show', compact('post'));
@@ -77,7 +61,7 @@ class PostController extends Controller
     public function edit(string $current_post_id): View
     {
         $categories = getCategories();
-        $posts = $this->getPosts();
+        $posts = getPosts();
         foreach ($posts as $post) {
             if ($post->id === (int) $current_post_id) {
                 return view('user.posts.edit', compact('post', 'categories'));
