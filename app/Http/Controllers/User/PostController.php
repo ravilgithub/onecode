@@ -40,13 +40,7 @@ class PostController extends Controller
      */
     public function create(): View
     {
-        $categories = [
-            __('Без категории'),
-            __('Первая категория'),
-            __('Вторая категория'),
-            __('Третья категория'),
-        ];
-
+        $categories = getCategories();
         return view('user.posts.create', compact('categories'));
     }
 
@@ -82,13 +76,7 @@ class PostController extends Controller
      */
     public function edit(string $current_post_id): View
     {
-        $categories = [
-            __('Без категории'),
-            __('Первая категория'),
-            __('Вторая категория'),
-            __('Третья категория'),
-        ];
-
+        $categories = getCategories();
         $posts = $this->getPosts();
         foreach ($posts as $post) {
             if ($post->id === (int) $current_post_id) {

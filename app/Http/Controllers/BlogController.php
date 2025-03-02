@@ -64,12 +64,7 @@ class BlogController extends Controller
      */
     public function index(Request $request): View
     {
-        $categories = [
-            __('Все категории'),
-            __('Первая категория'),
-            __('Вторая категория'),
-            __('Третья категория'),
-        ];
+        $categories = getCategories();
         $posts = $this->getPosts();
         $posts = $this->filterPosts($request, $posts);
 

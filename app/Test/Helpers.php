@@ -21,3 +21,19 @@ if (! function_exists('alert')) {
         session()->flash('alert-variant', $variant);
     }
 }
+
+/**
+ * Имитация модели "Категории публикаций".
+ *
+ * @return Array - категории публикаций
+ */
+if (! function_exists('getCategories')) {
+    function getCategories() {
+        return [
+            __('Все категории'),
+            __('Первая категория'),
+            __('Вторая категория'),
+            __('Третья категория'),
+        ];
+    }
+}
