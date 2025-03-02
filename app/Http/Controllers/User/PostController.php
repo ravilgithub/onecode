@@ -34,9 +34,6 @@ class PostController extends Controller
     public function store(StoreUpdatePostRequest $request): RedirectResponse
     {
         $validated = $request->validated();
-
-        // dd($validated);
-
         $post = getPosts()[0];
         alert('Сохранено!');
         return redirect()->route('user.posts.show', $post->id);
@@ -75,9 +72,6 @@ class PostController extends Controller
     public function update(StoreUpdatePostRequest $request, string $id): RedirectResponse
     {
         $validated = $request->validated();
-
-        // dd($validated);
-
         alert('Обновлено!');
         return back();
     }

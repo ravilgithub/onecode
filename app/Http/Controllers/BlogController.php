@@ -55,8 +55,6 @@ class BlogController extends Controller
         $categories = getCategories();
         $posts = getPosts();
         $posts = $this->filterPosts($request, $posts);
-
-        // compact('posts') == ['posts' => $posts]
         return view('blog.index', compact('posts', 'categories'));
     }
 
@@ -68,7 +66,6 @@ class BlogController extends Controller
         $posts = getPosts();
         foreach ($posts as $post) {
             if ($post->id === (int) $current_post_id) {
-                // compact('post') == ['post' => $post]
                 return view('blog.show', compact('post'));
             }
         }

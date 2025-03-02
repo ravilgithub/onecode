@@ -26,7 +26,6 @@ class LoginController extends Controller
 
     public function confirm(Request $request, $user): string
     {
-        //        dump($request);
         return "Двухфакторная аутентификация пользователя с id: $user";
     }
 }
