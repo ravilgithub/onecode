@@ -23,7 +23,7 @@
         <x-forms.error name="content" />
     </x-forms.form-item>
 
-    <x-forms.form-item class="col-md-4 mb-4">
+    <x-forms.form-item class="mb-4">
         <x-forms.inputs.select
             label="Category"
             name="category_id"
