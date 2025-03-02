@@ -40,11 +40,11 @@
 ></trix-editor>
 
 @pushOnce('css')
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.1.12/dist/trix.css">
 @endPushOnce
 
 @pushOnce('js')
-    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/trix@2.1.12/dist/trix.umd.min.js"></script>
 
     @if ($prevent)
         <script type="module">
