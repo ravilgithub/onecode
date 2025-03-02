@@ -18,7 +18,7 @@
     </x-forms.form-item>
 
     <x-forms.form-item class="mb-3">
-        <x-forms.inputs.trix label="{{ __('Content') }}" value="{{ $post->content ?? '' }}" required />
+        <x-forms.inputs.editor label="{{ __('Content') }}" value="{{ $post->content ?? '' }}" required />
 
         <x-forms.error name="content" />
     </x-forms.form-item>
