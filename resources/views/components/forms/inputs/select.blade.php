@@ -1,5 +1,5 @@
 @props([
-    'label'     => __('Select'),
+    'label'     => 'Select',
     'name'      => 'select',
     'value'     => '',
     'required'  => false,
@@ -14,7 +14,7 @@
             'required' => $required,
         ])
     >
-        {{ $label }}
+        {{ __($label) }}
     </label>
 @endif
 

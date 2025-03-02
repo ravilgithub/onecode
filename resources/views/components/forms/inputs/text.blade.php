@@ -1,5 +1,5 @@
 @props([
-    'label'     => __('Title'),
+    'label'     => 'Text',
     'name'      => 'title',
     'value'     => '',
     'required'  => false,
@@ -14,7 +14,7 @@
             'required' => $required,
         ])
     >
-        {{ $label }}
+        {{ __($label) }}
     </label>
 @endif
 

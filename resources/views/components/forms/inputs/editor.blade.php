@@ -3,7 +3,7 @@
     'name'        => 'content',
     'value'       => '',
     'placeholder' => '',
-    'label'       => __('Content'),
+    'label'       => 'Editor',
     'required'    => false,
     'autofocus'   => false,
     'prevent'     => false,
@@ -17,7 +17,7 @@
             'required' => $required,
         ])
     >
-        {{ $label }}
+        {{ __($label) }}
     </label>
 @endif
 

@@ -1,5 +1,5 @@
 @props([
-    'label'     => __('Email'),
+    'label'     => 'Email',
     'name'      => 'email',
     'required'  => false,
     'autofocus' => false,
@@ -13,7 +13,7 @@
             'required' => $required,
         ])
     >
-        {{ $label }}
+        {{ __($label) }}
     </label>
 @endif
 
