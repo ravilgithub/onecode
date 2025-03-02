@@ -24,7 +24,7 @@ class StoreUpdatePostRequest extends FormRequest
         return [
             'title'   => ['required', 'string', 'max:255'],
             'content' => ['required', 'string'],
-            'category_id' => ['required', 'integer', 'min:10'],
+            'category' => ['required', 'integer', 'min:10'],
         ];
     }
 }

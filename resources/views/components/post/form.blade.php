@@ -26,13 +26,13 @@
     <x-forms.form-item class="mb-4">
         <x-forms.inputs.select
             label="Category"
-            name="category_id"
-            value="{{ request('category_id') }}"
+            name="category"
+            value="{{ request('category') }}"
             :options="$categories"
             required
         />
 
-        <x-forms.error name="category_id" />
+        <x-forms.error name="category" />
     </x-forms.form-item>
 
     <x-button>

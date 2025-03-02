@@ -13,7 +13,7 @@ class BlogController extends Controller
             'id'      => 1,
             'title'   => 'Lorem ipsum dolor sit amet.',
             'content' => 'Lorem, ipsum dolor sit amet <a href="https://yandex.ru">Yandex</a> consectetur adipisicing elit. Quibusdam, accusamus.',
-            'category_id' => 1,
+            'category' => 1,
         ];
 
         return array_fill(0, 4, $post);
@@ -30,7 +30,7 @@ class BlogController extends Controller
     public function filterPosts(Request $request, array $posts): array
     {
         $search = strtolower($request->input('search'));
-        $search_cat_id = (int) $request->input('category_id');
+        $search_cat_id = (int) $request->input('category');
 
         return array_filter(
             $posts,
@@ -38,7 +38,7 @@ class BlogController extends Controller
             {
                 $title = strtolower($post->title);
                 $content = strtolower($post->content);
-                $post_cat_id = $post->category_id;
+                $post_cat_id = $post->category;
 
                 if (
                     $search_cat_id &&
