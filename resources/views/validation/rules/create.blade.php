@@ -18,7 +18,7 @@
 
             </x-on-line>
 
-            <x-post.form class="my-form" action="{{ route('validation.rules.store') }}" />
+            <x-validation.rules.form class="my-form" action="{{ route('validation.rules.store') }}" />
 
         </x-container>
 
