@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StoreValidationRulesRequest;
 
-class Rules extends Controller
+class RuleController extends Controller
 {
     public function index(): View
     {
