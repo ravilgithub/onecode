@@ -1,9 +1,8 @@
 @props([
-    'label'     => __('Email'),
-    'name'      => 'email',
-    'required'  => false,
-    'autofocus' => false,
-    'single'    => false,
+    'label'    => __('Email'),
+    'name'     => 'email',
+    'required' => false,
+    'single'   => false,
 ])
 
 @if (! $single)
@@ -23,8 +22,7 @@
     {{ $attributes->class([
         'form-control',
     ])->merge([
-        'name'      => $name,
-        'value'     => old($name),
-        'autofocus' => $autofocus,
+        'name'  => $name,
+        'value' => old($name),
     ])}}
 />

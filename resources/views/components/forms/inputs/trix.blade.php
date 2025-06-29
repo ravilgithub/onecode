@@ -1,13 +1,11 @@
 @props([
-    'id'          => Str::uuid(),
-    'name'        => 'content',
-    'value'       => '',
-    'placeholder' => '',
-    'label'       => __('Content'),
-    'required'    => false,
-    'autofocus'   => false,
-    'prevent'     => false,
-    'single'      => false,
+    'id'       => Str::uuid(),
+    'name'     => 'content',
+    'value'    => '',
+    'label'    => __('Content'),
+    'required' => false,
+    'prevent'  => false,
+    'single'   => false,
 ])
 
 @if (! $single)
@@ -25,7 +23,7 @@
     type="hidden"
     id="{{ $id }}"
     name="{{ $name }}"
-    value="{!! $value !!}"
+    value="{!! old($name) ?: $value !!}"
 />
 
 <trix-editor
@@ -33,9 +31,6 @@
     @required($required)
     {{ $attributes->class([
         'form-control',
-    ])->merge([
-        'autofocus'   => $autofocus,
-        'placeholder' => $placeholder,
     ])}}
 ></trix-editor>
 
