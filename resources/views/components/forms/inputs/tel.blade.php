@@ -1,6 +1,7 @@
 @props([
-    'label'    => __('Email'),
-    'name'     => 'email',
+    'label'    => __('Phone'),
+    'name'     => 'phone',
+    'value'    => '',
     'required' => false,
     'single'   => false,
 ])
@@ -17,12 +18,12 @@
 @endif
 
 <input
-    type="email"
+    type="text"
     @required($required)
     {{ $attributes->class([
         'form-control',
     ])->merge([
         'name'  => $name,
-        'value' => old($name),
+        'value' => old($name) ?: $value,
     ])}}
 />

@@ -1,9 +1,10 @@
 @props([
-    'label'     => __('Select'),
-    'value'     => '',
-    'required'  => false,
-    'single'    => false,
-    'options'   => [],
+    'label'    => __('Select'),
+    'name'     => 'select',
+    'value'    => '',
+    'required' => false,
+    'single'   => false,
+    'options'  => [],
 ])
 
 @if (! $single)
@@ -13,7 +14,7 @@
             'required' => $required,
         ])
     >
-        {{ $label }}
+        {{ $label }} {{ old($name) }}
     </label>
 @endif
 
@@ -21,15 +22,14 @@
     {{ $attributes->class([
         'form-select',
     ])->merge([
-        'name'      => 'select',
-        'required'  => $required,
-        'autofocus' => false,
+        'name'     => $name,
+        'required' => $required,
     ])}}
 >
     @foreach ($options as $key => $text)
         <option
             value="{{ $key }}"
-            @selected($key == $value)
+            @selected($key == (old($name) ?: $value))
         >
             {{ $text }}
         </option>

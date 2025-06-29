@@ -1,9 +1,8 @@
 @props([
-    'label'     => __('Password'),
-    'name'      => 'password',
-    'required'  => false,
-    'autofocus' => false,
-    'single'    => false,
+    'label'    => __('Password'),
+    'name'     => 'current_password',
+    'required' => false,
+    'single'   => false,
 ])
 
 @if (! $single)
@@ -19,12 +18,10 @@
 
 <input
     type="password"
-    @required($required)
+    {{-- @required($required) --}}
     {{ $attributes->class([
         'form-control',
     ])->merge([
-        'name'      => $name,
-        'value'     => old($name),
-        'autofocus' => $autofocus,
+        'name' => $name,
     ])}}
 />

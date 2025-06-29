@@ -24,6 +24,12 @@
                             {{ __('Блог') }}
                         </x-link>
                     </li>
+
+                    <li class="nav-item">
+                        <x-link to="validation.rules.create" class="nav-link" area="true">
+                            {{ __('Валидация') }}
+                        </x-link>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
