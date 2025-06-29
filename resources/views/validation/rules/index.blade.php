@@ -31,7 +31,13 @@
 
                                 @foreach ($fields as $field => $value)
                                     <dt>Поле: {{ $field }}</dt>
-                                    <dd>Значение: {{ $value }}</dd>
+
+                                    @if (is_array($value))
+                                        <dd><pre>Значение: {{ collect($value) }}</pre></dd>
+                                    @else
+                                        <dd>Значение: {{ $value }}</dd>
+                                    @endif
+
                                 @endforeach
 
                             </dl>
