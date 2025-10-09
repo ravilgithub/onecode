@@ -23,6 +23,16 @@ class RegisterController extends Controller
             'rules' => ['accepted'],
         ]);
 
+        $user = User::query()->create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => bcrypt($validated['password']),
+        ]);
+
+        // dd($user->toArray());
+
+        $user->save();
+
         return redirect()->route('user.posts.index');
     }
 }
