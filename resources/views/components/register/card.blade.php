@@ -13,7 +13,11 @@
 
     <x-forms.form action="{{ route('register.store') }}" method="POST">
         <x-forms.form-item class="mb-3">
-            <x-forms.inputs.email autofocus required />
+            <x-forms.inputs.text label="Name" name="name" autofocus required />
+        </x-forms.form-item>
+
+        <x-forms.form-item class="mb-3">
+            <x-forms.inputs.email required />
         </x-forms.form-item>
 
         <x-forms.form-item class="mb-3">
