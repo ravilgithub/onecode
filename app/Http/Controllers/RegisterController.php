@@ -31,8 +31,6 @@ class RegisterController extends Controller
 
         // dd($user->toArray());
 
-        $user->save();
-
         return redirect()->route('user.posts.index');
     }
 }
