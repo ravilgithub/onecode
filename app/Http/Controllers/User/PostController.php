@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Models\Post;
+use App\Models\User;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Post\StoreUpdatePostRequest;
 use Illuminate\Http\Request;
@@ -34,6 +37,20 @@ class PostController extends Controller
     public function store(StoreUpdatePostRequest $request): RedirectResponse
     {
         $validated = $request->validated();
+
+        // dd($validated);
+
+        $post = Post::query()->firstOrCreate([
+            'user_id'      => User::query()->inRandomOrder()->first()->id,
+            'title'        => $validated['title'],
+        ], [
+            'content'      => $validated['content'],
+            'published_at' => new Carbon($validated['published_at'] ?? null),
+            'published'    => $validated['published'] ?? false,
+        ]);
+
+        // dd($post->toArray());
+
         $post = getPosts()[0];
         alert('Сохранено!');
         return redirect()->route('user.posts.show', $post->id);
