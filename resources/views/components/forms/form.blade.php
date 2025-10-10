@@ -8,5 +8,7 @@
         @csrf
     @endif
 
+    <x-forms.errors />
+
     {{ $slot }}
 </form>

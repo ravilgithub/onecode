@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
@@ -15,12 +16,21 @@ class RegisterController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        if ($invalid = true) {
-            alert('Something wrong!', 'danger');
-            return back()->withInput();
-        }
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:50'],
+            'email' => ['required', 'string', 'email', 'unique:users', 'max:50'],
+            'password' => ['required', 'string', 'confirmed', 'min:7', 'max:50'],
+            'rules' => ['accepted'],
+        ]);
 
-        alert('Welcome aboard.');
+        $user = User::query()->create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => bcrypt($validated['password']),
+        ]);
+
+        // dd($user->toArray());
+
         return redirect()->route('user.posts.index');
     }
 }

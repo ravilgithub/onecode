@@ -22,9 +22,11 @@ class StoreUpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'   => ['required', 'string', 'max:255'],
-            'content' => ['required', 'string'],
-            'category' => ['required', 'integer', 'min:0'],
+            'title'        => ['required', 'string', 'max:255'],
+            'content'      => ['required', 'string'],
+            'category'     => ['required', 'integer', 'min:0'],
+            'published_at' => ['nullable', 'string', 'date'],
+            'published'    => ['nullable', 'boolean'],
         ];
     }
 }
