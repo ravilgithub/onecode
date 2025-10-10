@@ -33,6 +33,14 @@
         <x-forms.error name="category" />
     </x-forms.form-item>
 
+    <x-forms.form-item class="mb-3">
+        <x-forms.inputs.date label="Дата публикации" name="published_at" />
+    </x-forms.form-item>
+
+    <x-forms.form-item class="mb-3 form-check">
+        <x-forms.inputs.checkbox label="Опубликовать" name="published" value="1" />
+    </x-forms.form-item>
+
     <x-button>
         {{ $put ? __('Изменить пост') : __('Создать пост') }}
     </x-button>
